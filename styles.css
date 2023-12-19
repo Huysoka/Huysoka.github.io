@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    color: white;
+    padding: 20px;
+    text-align: left;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+    letter-spacing: 2px;
+}
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+nav ul li a:hover {
+    color: white;
+}
+
+main {
+    padding: 20;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+    margin-left: 350px;
+}
+
+form label, form button {
+    color: white;
+}
+h2 {
+    font-size: 100px;
+    color: white;
+
+}
+h3 {
+    font-size: 19px;
+    color: white;
+}
+#More_Info {
+    padding-top: 100vh; /* Adjust this value as needed */
+}
+body {
+    background: url('https://th.bing.com/th/id/R.b5fd3fbe984103e08b9482471484394b?rik=MvBa8m16WANgWw&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    border-left: 0px solid white;
+    border-right: 0px solid white;
+    font-style: normal;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: 'Roboto',sans-serif;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 180px;
+}
+.search-bar{
+    width: 250px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+.search-bar input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.search-bar button{
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.search-bar input::placeholder{
+    color: #fff;
+}
+.search-bar button i{
+    font-size: 22px;
+}
+.navbar a{
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 30px;
+    text-decoration: none;
+}
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+h2.page-title {
+    text-align: center;
+    line-height: 100%;
+    color: white;
+    margin-top: 20px;
+    font-family: 'Roboto',sans-serif;
+}
+
+.page-description {
+    font-size:  18px;
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    font-family: 'Roboto',sans-serif;
+    letter-spacing: 2px;
+    font-weight: 100px;
+}
+.btn-59 {
+    margin: 0 48px;
+    margin-top: 25px
+}
+.center-buttons {
+    display: flex;
+    justify-content: center;
+}
+.promo-title {
+    text-align: center;
+    margin-top: -400px;
+}
+.box-title {
+    text-align: left; /* or right, depending on your needs */
+    margin-top: -150px;
+}
+
+.text-center {
+    color: rgb(164, 161, 161); /* Replace with the color you want */
+    font-size: 16px;
+    font-family: 'Roboto',sans-serif;
+    margin-top: 0px;
+}
+.box-description {
+    color: rgb(164, 161, 161); /* Replace with the color you want */
+    font-size: 16px;
+    font-family: 'Roboto',sans-serif;
+    margin-top: 0px;
+}
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+}
