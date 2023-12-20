@@ -153,13 +153,14 @@
             <p>DIVE INTO KNOWLEDGE WITH POPUP QUIZ, WHERE EACH QUESTION SPARKS DISCOVERY.</p>
             <div class="btn-group center-buttons" role="group" aria-label="Button group with nested dropdown"></div>
             <a href="anmelden.html" class="btn-59"><span>Register</span></a>
-            <a href="moreinfo.html" class="btn-59"><span>Learn More</span></a>
+            <a href="#learn-more" class="btn-59" onclick="event.preventDefault(); 
+            smoothScroll(document.getElementById('learn-more'))"><span>Learn More</span></a>
         </div>
     </section>
     
 <!---------- course ----------->
     
-    <section class="learn-more">
+    <section id="learn-more">
         <h1>What is PopUp Quiz?</h1>
         Popup Quiz is a state-of-the-art platform designed to ignite your curiosity and test your knowledge across various topics.
                                     Whether you're a trivia enthusiast or a casual learner, Popup Quiz delivers engaging questions that make learning a delightful adventure.</p>
@@ -191,7 +192,8 @@
     
     <section class="testimonials">
         <h1>Feedback</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>At the heart of our success is your invaluable feedback. 
+            It not only helps us improve our services but also enriches our understanding of your needs and expectations.</p>        
             <div class="row">
                 <div class="testimonial-col">
                     <img src="images/manh.jpg">
@@ -248,6 +250,15 @@
   
   
 <!----JavaScript for toggle menu---->
+<script>
+    function smoothScroll(target) {
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+</script>
+
 <script>
     var navLinks = document.getElementById("navLinks");
 
