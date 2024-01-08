@@ -1,29 +1,43 @@
 <?php
-    $name = $_POST['name'];
-    $visitor_email = $_POST['email'];
-    $subject = $_POST['subject'];
-    $message = $_POST['message'];
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require 'vendor/autoload.php';
 
-    $email_from = 'info@popup.com';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validierung und Säuberung der Benutzereingaben
+    $name = htmlspecialchars($_POST['name']);
+    $visitor_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $subject = htmlspecialchars($_POST['subject']);
+    $message = htmlspecialchars($_POST['message']);
 
-    $email_subject = "New Form Submission";
-    
-    $email_body =   "User Name: $name.\n".
-                    "User Email: $visitor_email.\n".
-                    "Subject: $subject.\n".
-                    "User Message: $message.\n";
+    $mail = new PHPMailer(true);
 
+    try {
+        //Server settings
+        $mail->SMTPDebug = 2;                                 
+        $mail->isSMTP();                                      
+        $mail->Host = 'smtp.gmail.com';  
+        $mail->SMTPAuth = true;                               
+        $mail->Username = 'huy454957@gmail.com';                 
+        $mail->Password = 'kvqzvqzafcfncrwc';                           
+        $mail->SMTPSecure = 'tls';                            
+        $mail->Port = 587;                                    
 
-    $to = "huy454957@gmail.com";
+        //Recipients
+        $mail->setFrom('info@popup.com', 'PopUp!');
+        $mail->addAddress($visitor_email, $name);     
 
-    $headers = "From: $email_from \r\n";
+        //Content
+        $mail->isHTML(true);                                  
+        $mail->Subject = $subject;
+        $mail->Body    = $message;
+        $mail->AltBody = $message;
 
-    $headers .= "Reply-To: $visitor_email \r\n";
-
-    mail($to,$email_subject,$email_body,$headers);
-
-    header("Location: contact.html");
-
-
+        $mail->send();
+        header("Location: contact.html");
+    } catch (Exception $e) {
+        echo 'Die Nachricht konnte nicht gesendet werden. Mailer Error: ', $mail->ErrorInfo;
+    }
+}
 ?>
